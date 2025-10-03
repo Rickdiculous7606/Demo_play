@@ -1,0 +1,8 @@
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd" >
+<suite name="Word press test suite">
+    <test name="UI Tests">
+        <classes>
+            <class name="test.LoginTest"/>
+        </classes>
+    </test>
+</suite>
