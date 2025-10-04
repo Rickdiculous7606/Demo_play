@@ -1,15 +1,16 @@
-package com.wordpress.pagemodels.Login;
+package com.wordpress.pagemodels.DemoQaPoms;
 
 import com.microsoft.playwright.Page;
 
 public class LandingPage {
     private final Page page;
 
-    // Locators (all in one place at the top)
+    // Locators
     private final String pageTitle = "//a[@href='https://demoqa.com']";
+    private final String elementsCard = "//div[@class='card-body'][normalize-space()='Elements']";
 
 
-    // Constructor
+    // Constructor for landing page POM
     public LandingPage(Page page) {
         this.page = page;
     }
@@ -17,6 +18,13 @@ public class LandingPage {
     // Verifing page title once after loading
     public Page verifyPageTitle() {
         page.waitForSelector(pageTitle);
+        return page;
+    }
+
+    //Navigate to text box page.
+    public Page navigateTextBoxPage(){
+        page.waitForSelector(elementsCard);
+        page.click(elementsCard);
         return page;
     }
 }
