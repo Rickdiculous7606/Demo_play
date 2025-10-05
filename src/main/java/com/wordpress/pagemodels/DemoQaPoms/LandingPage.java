@@ -15,7 +15,7 @@ public class LandingPage {
         this.page = page;
     }
 
-    // Verifing page title once after loading
+    //verifying page title once after loading
     public Page verifyPageTitle() {
         page.waitForSelector(pageTitle);
         return page;

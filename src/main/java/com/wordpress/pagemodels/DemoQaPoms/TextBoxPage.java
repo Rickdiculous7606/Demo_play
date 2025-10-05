@@ -1,12 +1,11 @@
 package com.wordpress.pagemodels.DemoQaPoms;
 
 import com.microsoft.playwright.Page;
-import com.wordpress.pagemodels.Constants.FormFillConstants;
 
 public class TextBoxPage {
     private final Page page;
 
-    // Locators
+    //Locators
     private final String textBoxButton = "//span[@class='text'][normalize-space()='Text Box']";
     private final String textBoxTitle = "//h1[contains(@class, 'text-center')]";
     private final String fullName = "//label[contains(@id, 'userName-label')]";
