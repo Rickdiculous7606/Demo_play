@@ -12,6 +12,7 @@ public class TextBoxPage {
     private final String fullNameTextBox = "//input[contains(@placeholder, 'Full Name')]";
     private final String email = "//label[contains(@id, 'userEmail-label')]";
     private final String emailTextBox = "//input[contains(@placeholder, 'name@example.com')]";
+    private final String emailBoxError = "//input[contains(@class, 'form-control') and contains(@class, 'field-error')]";
     private final String currentAddress = "//label[contains(@id, 'currentAddress-label')]";
     private final String currentAddressTextBox = "//textarea[contains(@placeholder, 'Current Address')]";
     private final String permanentAddress = "//label[contains(@id, 'permanentAddress')]";
@@ -70,4 +71,19 @@ public class TextBoxPage {
         page.click(submitButton);
         return page;
     }
+
+    //Verify the wrong email ID error in email text box
+    public Page verifyInvalidEmailError() {
+        page.waitForSelector(emailBoxError);
+        return page;
+    }
+
+    //Enter invalid email to check error
+    public Page enterInvalidEmail(String invalidEmail) {
+        page.waitForSelector(email);
+        page.click(emailTextBox);
+        page.fill(emailTextBox, invalidEmail);
+        return page;
+    }
+
 }

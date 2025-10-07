@@ -14,4 +14,12 @@ public class FormFillUtils {
                 {"Ramesh Kumar", "ramesh.qa@example.com", "1/60 Indra Nagar, Chennai", "No.45, Main Street, Chennai"}
         };
     }
+
+    @DataProvider(name = "invalidEmailData")
+    public static Object[][] getInvalidEmailData() {
+        return new Object[][]{
+                {FormFillConstants.EMAIL_ERROR},
+                {"hihihb@tagg"}
+        };
+    }
 }
