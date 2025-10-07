@@ -29,7 +29,7 @@ public class BaseTest {
         // Check if test failed
         if (result.getStatus() == ITestResult.FAILURE) {
             String testName = result.getMethod().getMethodName();
-            System.out.println("🚨 Test failed: " + testName + " - Taking screenshot...");
+            System.out.println("Test failed: " + testName + " - Taking screenshot...");
 
             // Take screenshot
             ScreenshotUtil.captureScreenshot(page, testName);
