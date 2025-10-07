@@ -1,6 +1,7 @@
 package com.wordpress.pagemodels.Base;
 
 import com.microsoft.playwright.*;
+import com.wordpress.pagemodels.Utils.ScreenshotUtil;
 import com.wordpress.pagemodels.Utils.SsListerner;
 
 import org.testng.ITestResult;
@@ -25,6 +26,15 @@ public class BaseTest {
 
     @AfterMethod
     public void tearDown(ITestResult result) {
+        // Check if test failed
+        if (result.getStatus() == ITestResult.FAILURE) {
+            String testName = result.getMethod().getMethodName();
+            System.out.println("🚨 Test failed: " + testName + " - Taking screenshot...");
+
+            // Take screenshot
+            ScreenshotUtil.captureScreenshot(page, testName);
+        }
+        // Close browser
         if (browser != null) {
             browser.close();
         }
@@ -32,7 +42,7 @@ public class BaseTest {
             playwright.close();
         }
     }
-    // Add this method for the listener to access page
+    // This lets other classes access the page
     public Page getPage() {
         return page;
     }
