@@ -1,7 +1,12 @@
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd" >
-<suite name="Word press test suite">
+<suite name="DemoQA Test Suite">
+    <listeners>
+        <listener class-name="com.wordpress.pagemodels.Utils.SsListerner"/>
+    </listeners>
     <test name="UI Tests">
         <classes>
+            <class name="test.InvalidEmailTest"/>
+            <class name="test.textBoxTest"/>
             <class name="test.LoginTest"/>
         </classes>
     </test>

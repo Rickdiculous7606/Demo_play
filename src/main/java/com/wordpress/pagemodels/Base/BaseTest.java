@@ -1,10 +1,12 @@
 package com.wordpress.pagemodels.Base;
 
 import com.microsoft.playwright.*;
+import com.wordpress.pagemodels.Utils.SsListerner;
+
+import org.testng.ITestResult;
 import org.testng.annotations.*;
 
-import java.util.Arrays;
-
+@Listeners(SsListerner.class)
 public class BaseTest {
     protected Playwright playwright;
     protected Browser browser;
@@ -22,10 +24,17 @@ public class BaseTest {
     }
 
     @AfterMethod
-    public void tearDown() {
-        if (context != null) context.close();
-        if (browser != null) browser.close();
-        if (playwright != null) playwright.close();
+    public void tearDown(ITestResult result) {
+        if (browser != null) {
+            browser.close();
+        }
+        if (playwright != null) {
+            playwright.close();
+        }
+    }
+    // Add this method for the listener to access page
+    public Page getPage() {
+        return page;
     }
 }
 
