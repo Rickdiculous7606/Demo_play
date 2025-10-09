@@ -7,7 +7,7 @@ public class TextBoxPage {
 
     //Locators
     private final String textBoxButton = "//span[@class='text'][normalize-space()='Text Box']";
-    private final String textBoxTitle = "//h1[contains(@class, 'text-center')]";
+    private final String textBoxTitle = "//h1[@class='text-center'][normalize-space()='Text Box']";
     private final String fullName = "//label[contains(@id, 'userName-label')]";
     private final String fullNameTextBox = "//input[contains(@placeholder, 'Full Name')]";
     private final String email = "//label[contains(@id, 'userEmail-label')]";
