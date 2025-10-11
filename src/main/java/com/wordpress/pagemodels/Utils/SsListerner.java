@@ -1,7 +1,7 @@
 package com.wordpress.pagemodels.Utils;
 
 import com.microsoft.playwright.Page;
-import com.wordpress.pagemodels.Utils.ScreenshotUtil;
+
 import org.testng.ITestListener;
 import org.testng.ITestResult;
 

@@ -22,7 +22,7 @@ public class LandingPage {
     }
 
     //Navigate to text box page.
-    public Page navigateTextBoxPage(){
+    public Page navigateTextBoxPage() {
         page.waitForSelector(elementsCard);
         page.click(elementsCard);
         return page;

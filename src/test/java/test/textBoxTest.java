@@ -15,7 +15,7 @@ import com.wordpress.pagemodels.Utils.FormFillUtils;
 public class textBoxTest extends BaseTest {
     @Test(dataProvider = "textBoxData", dataProviderClass = FormFillUtils.class)
     // Land on the text box to fill details
-    public void fillForm(String name, String emailId, String address, String address2){
+    public void fillForm(String name, String emailId, String address, String address2) {
         LandingPage landingPage = new LandingPage(page);
         TextBoxPage textBoxPage = new TextBoxPage(page);
         landingPage.verifyPageTitle();

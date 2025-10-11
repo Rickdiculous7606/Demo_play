@@ -20,12 +20,12 @@ public class TextBoxPage {
     private final String submitButton = "//button[@id='submit']";
 
     // Constructor for text box page POM
-    public TextBoxPage(Page Page){
+    public TextBoxPage(Page Page) {
         this.page = Page;
     }
 
     //Click on text to fill the form
-    public Page clickTextBox(){
+    public Page clickTextBox() {
         page.waitForSelector(textBoxButton);
         page.click(textBoxButton);
         return page;
@@ -38,19 +38,21 @@ public class TextBoxPage {
     }
 
     //Verify full name amd enter the text.
-    public Page fillFullName(String name){
+    public Page fillFullName(String name) {
         page.waitForSelector(fullName);
         page.click(fullNameTextBox);
         page.fill(fullNameTextBox, name);
         return page;
     }
+
     //Verify email amd enter the email id.
-    public Page fillEmailId(String emailID){
+    public Page fillEmailId(String emailID) {
         page.waitForSelector(email);
         page.click(emailTextBox);
         page.fill(emailTextBox, emailID);
         return page;
     }
+
     //Verify address amd enter the address.
     public Page fillCurrentAddress(String address) {
         page.waitForSelector(currentAddress);
@@ -58,6 +60,7 @@ public class TextBoxPage {
         page.fill(currentAddressTextBox, address);
         return page;
     }
+
     // //Verify permanent address amd enter the address.
     public Page fillPermanentAddress(String address2) {
         page.waitForSelector(permanentAddress);
@@ -65,8 +68,9 @@ public class TextBoxPage {
         page.fill(permanentAddressTextBox, address2);
         return page;
     }
+
     //Click submit button once after filling the form.
-    public Page clickSubmitButton(){
+    public Page clickSubmitButton() {
         page.waitForSelector(submitButton);
         page.click(submitButton);
         return page;

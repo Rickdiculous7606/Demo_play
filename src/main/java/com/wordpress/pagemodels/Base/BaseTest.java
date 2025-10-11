@@ -42,9 +42,9 @@ public class BaseTest {
             playwright.close();
         }
     }
+
     // This lets other classes access the page
     public Page getPage() {
         return page;
     }
 }
-

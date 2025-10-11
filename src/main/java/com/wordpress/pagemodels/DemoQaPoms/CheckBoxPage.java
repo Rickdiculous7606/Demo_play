@@ -11,11 +11,9 @@ public class CheckBoxPage {
     private final String checkBoxCheck = "//span[@class='rct-checkbox']//*[contains(@class,'rct-icon-check')]";
     private final String toggleButton = "//button[@title='Toggle']";
 
-
-    public CheckBoxPage (Page page){
+    public CheckBoxPage(Page page) {
         this.page = page;
     }
-
 
 
 }
