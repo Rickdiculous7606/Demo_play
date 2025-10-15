@@ -17,13 +17,13 @@ public class LandingPage {
 
     //verifying page title once after loading
     public Page verifyPageTitle() {
-        page.waitForSelector(pageTitle);
+        page.isEnabled(pageTitle);
         return page;
     }
 
     //Navigate to text box page.
     public Page navigateTextBoxPage() {
-        page.waitForSelector(elementsCard);
+        page.isEnabled(elementsCard);
         page.click(elementsCard);
         return page;
     }

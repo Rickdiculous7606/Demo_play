@@ -11,7 +11,16 @@ public class CheckBoxPage {
     private final String checkBoxTitle = "//h1[@class='text-center'][normalize-space()='Check Box']";
     private final String checkBoxUnCheck = "//span[@class='rct-checkbox']//*[contains(@class,'rct-icon-uncheck')]";
     private final String checkBoxCheck = "//span[@class='rct-checkbox']//*[contains(@class,'rct-icon-check')]";
+    private final String homeFolder = "//span[@class='rct-title'][contains(text(),'Home')]";
+    private final String desktopFolder = "//span[@class='rct-title'][contains(text(),'Desktop')]";
+    private final String documentsFolder = "//span[@class='rct-title'][contains(text(),'Documents')]";
+    private final String downloadsFolder = "//span[@class='rct-title'][contains(text(),'Downloads')]";
     private final String toggleButton = "//button[@title='Toggle']";
+    private final String toggleExpandAll = "//button[@title='Expand all']";
+    private final String desktopCheckBox = "//span[@class='rct-title' and text()='Desktop']/preceding-sibling::span[@class='rct-checkbox']";
+    private final String workspaceCheckBox = "//span[@class='rct-title' and text()='WorkSpace']/preceding-sibling::span[@class='rct-checkbox']";
+    private final String officeCheckBox = "//span[@class='rct-title' and text()='Office']/preceding-sibling::span[@class='rct-checkbox']";
+    private final String downloadsCheckBox = "//span[@class='rct-title' and text()='Downloads']/preceding-sibling::span[@class='rct-checkbox']";
     private final String textSuccessHome = "//span[@class='text-success'][normalize-space()='home']";
     private final String textSuccessDesktop = "//span[@class='text-success'][normalize-space()='desktop']";
     private final String textSuccessNotes = "//span[@class='text-success'][normalize-space()='notes']";
@@ -51,7 +60,8 @@ public class CheckBoxPage {
 
     //Method to click home checkbox and validate the results.
     public Page clickHomeCheck() {
-        page.waitForSelector(checkBoxUnCheck);
+        page.isEnabled(homeFolder);
+        page.isEnabled(checkBoxUnCheck);
         page.click(checkBoxUnCheck);
         boolean isChecked = page.isEnabled(checkBoxCheck);
         assertTrue(isChecked, "Checkbox should be checked after clicking it.");
@@ -60,9 +70,68 @@ public class CheckBoxPage {
 
     //Method to validate toast result after selecting all the folders.
     public Page verifyToastResultForAll() {
-        page.waitForSelector(SelectionResultAll);
+        page.isEnabled(SelectionResultAll);
         boolean isToastTrue = page.isVisible(SelectionResultAll);
         assertTrue(isToastTrue, "Result is not expected");
+        return page;
+    }
+
+    public Page clickToggle() {
+        page.isEnabled(toggleButton);
+        page.click(toggleButton);
+        return page;
+    }
+
+    public Page verifyFoldersAndSubFolders() {
+        page.isEnabled(homeFolder);
+        page.isEnabled(desktopFolder);
+        page.isEnabled(documentsFolder);
+        page.isEnabled(downloadsFolder);
+        return page;
+    }
+
+    public Page expandAllTheFolder() {
+        page.isEnabled(toggleExpandAll);
+        page.click(toggleExpandAll);
+        return page;
+    }
+
+    public Page verifyDesktopFolder() {
+        page.isEnabled(desktopCheckBox);
+        page.click(desktopCheckBox);
+        page.isEnabled(textSuccessDesktop);
+        page.isEnabled(textSuccessNotes);
+        page.isEnabled(textSuccessCommands);
+        return page;
+    }
+
+    public Page verifyWorkspaceFolder() {
+        page.isEnabled(workspaceCheckBox);
+        page.click(workspaceCheckBox);
+        page.isEnabled(textSuccessWorkSpace);
+        page.isEnabled(textSuccessReact);
+        page.isEnabled(textSuccessAngular);
+        page.isEnabled(textSuccessVeu);
+        return page;
+    }
+
+    public Page verifyOfficeFolder() {
+        page.isEnabled(officeCheckBox);
+        page.click(officeCheckBox);
+        page.isEnabled(textSuccessOffice);
+        page.isEnabled(textSuccessPublic);
+        page.isEnabled(textSuccessPrivate);
+        page.isEnabled(textSuccessClassified);
+        page.isEnabled(textSuccessGeneral);
+        return page;
+    }
+
+    public Page verifyDownloadsFolder() {
+        page.isEnabled(downloadsCheckBox);
+        page.click(downloadsCheckBox);
+        page.isEnabled(textSuccessDownloads);
+        page.isEnabled(textSuccessWordFile);
+        page.isEnabled(textSuccessExcelFile);
         return page;
     }
 
