@@ -5,3 +5,5 @@ Just getting started..
 1. Verify home page
 2. Filling forms in text box page.
 3. Invalid email entered and submitted error should be thrown.
+4. Checkbox functionality.
+5. Radio button.
