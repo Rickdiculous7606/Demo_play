@@ -21,11 +21,9 @@ public class CheckBoxPage {
     private final String workspaceCheckBox = "//span[@class='rct-title' and text()='WorkSpace']/preceding-sibling::span[@class='rct-checkbox']";
     private final String officeCheckBox = "//span[@class='rct-title' and text()='Office']/preceding-sibling::span[@class='rct-checkbox']";
     private final String downloadsCheckBox = "//span[@class='rct-title' and text()='Downloads']/preceding-sibling::span[@class='rct-checkbox']";
-    private final String textSuccessHome = "//span[@class='text-success'][normalize-space()='home']";
     private final String textSuccessDesktop = "//span[@class='text-success'][normalize-space()='desktop']";
     private final String textSuccessNotes = "//span[@class='text-success'][normalize-space()='notes']";
     private final String textSuccessCommands = "//span[@class='text-success'][normalize-space()='commands']";
-    private final String textSuccessDocuments = "//span[@class='text-success'][normalize-space()='documents']";
     private final String textSuccessWorkSpace = "//span[@class='text-success'][normalize-space()='workspace']";
     private final String textSuccessReact = "//span[@class='text-success'][normalize-space()='react']";
     private final String textSuccessAngular = "//span[@class='text-success'][normalize-space()='angular']";
@@ -76,6 +74,7 @@ public class CheckBoxPage {
         return page;
     }
 
+    // Method to click toggle button.
     public Page clickToggle() {
         page.isEnabled(toggleButton);
         page.click(toggleButton);

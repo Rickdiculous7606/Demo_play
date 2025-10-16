@@ -9,6 +9,7 @@
             <class name="test.textBoxTest"/>
             <class name="test.LoginTest"/>
             <class name="test.CheckBoxFunctionality"/>
+            <class name="test.RadioButtonTest"/>
         </classes>
     </test>
 </suite>
